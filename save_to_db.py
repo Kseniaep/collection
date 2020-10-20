@@ -46,7 +46,7 @@ def load_new_data(path):
                     counter += 1
         print(f'Loaded from {file} {counter} new vacancies.')
 
-def print_salary_gte (salary, include_without_salary=False, currency='руб.'):
+def print_salary_gte (salary, include_without_salary=False, currency='руб'):
     """
     Find documents with salary greater or equal salary
     """
@@ -71,7 +71,7 @@ load_new_data(path)
 print_salary_gte(60000)
 
 
-db.vacancy.delete_many({})
+# db.vacancy.delete_many({})
 
 
 
