@@ -209,7 +209,9 @@ def write_vacancies(keyword):
     file_name = SAVE_PATH + '/' + keyword+date_sufix+'.pkl'
 
     df_sj = get_sj(keyword)
+    print(f'Got {len(df_sj)} vacancies from SJ')
     df_hh = get_hh(keyword)
+    print(f'Got {len(df_hh)} vacancies from HH')
     df = pd.concat([df_sj,df_hh],ignore_index = True)
     logging.info('Data recived')
 
@@ -221,7 +223,7 @@ def write_vacancies(keyword):
     return 1
 
 
-keyword = 'дата инженер'
+keyword = 'строитель'
 write_vacancies(keyword)
 
 
