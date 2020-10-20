@@ -37,7 +37,7 @@ def salary_split_sj(salary):
     else:
         currency_match = re.search('\d+(?P<cur>\D+)/(?P<period>.+)', salary)
         if currency_match:
-            salary_dict['currency'] = currency_match.group('cur')
+            salary_dict['currency'] = currency_match.group('cur').replace('.','')
             salary_dict['period'] = currency_match.group('period')
         else:
             raise ValueError (f'Can`t match currency value in string:\n{salary}')
