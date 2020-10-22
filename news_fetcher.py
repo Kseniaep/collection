@@ -63,7 +63,7 @@ def get_lenta_news(response):
         news_dict = {}
         news_dict['date'] = datetime.today().strftime('%Y-%m-%d') + ' ' + one_news.xpath('.//div[@class="info g-date item__info"]/text()')[0]
         news_dict['news_agency'] = 'lenta.ru'
-        news_dict['link'] = one_news.xpath('.//h3/a/@href')[0]
+        news_dict['link'] = 'https://lenta.ru' + one_news.xpath('.//h3/a/@href')[0]
         news_dict['title'] = one_news.xpath('.//h3/a/text()')[0].replace('\xa0', ' ')
         news_list.append(news_dict)
     logging.info(f'Got {len(news_list)} news')
